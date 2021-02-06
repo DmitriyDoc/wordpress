@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/includes/widget-text.php');
+
 add_action('after_setup_theme', 'si_setup');
 add_action('wp_enqueue_scripts', 'si_scripts');
 add_action( 'widgets_init', 'si_widgets' );
@@ -76,6 +78,8 @@ function si_widgets() {
         'before_widget' => null,
         'after_widget'  => null ,
     ]);
+
+    register_widget('si_widget_text');
 }
 
 function _si_assets_path($path){
