@@ -36,24 +36,43 @@
                 <?php the_custom_logo(); ?>
                 <span class="slogan">Твой фитнес клуб всегда рядом!</span>
             </p>
-
+            <?php
+                $locations = get_nav_menu_locations();
+                $menu_id = $locations['menu-footer'];
+                $menu_items = wp_get_nav_menu_items($menu_id, [
+                    'order' => 'ASC',
+                    'orderby' => 'menu_order'
+                ]);
+            ?>
             <nav class="main-navigation">
                 <ul class="main-navigation__list">
-                    <li>
-                        <a href="services.html">Услуги</a>
-                    </li>
-                    <li class="active">
-                        <a href="trainers.html">Тренеры</a>
-                    </li>
-                    <li>
-                        <a href="schedule.html">Расписание</a>
-                    </li>
-                    <li>
-                        <a href="prices.html">Цены</a>
-                    </li>
-                    <li>
-                        <a href="contacts.html">Контакты </a>
-                    </li>
+                    <?php
+                        $http_s = 'http' . ( ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ) ? 's' : '' ) . '://';
+                        $url = $http_s . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+                        foreach ($menu_items as $item) :
+                            $class_active = '';
+                            if ($url === $item->url) {
+                                $class_active = 'class="active"';
+                            }
+                    ?>
+
+                        <li <?php echo $class_active; ?> >
+                            <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+                        </li>
+                    <?php endforeach; ?>
+<!--                    <li class="active">-->
+<!--                        <a href="trainers.html">Тренеры</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="schedule.html">Расписание</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="prices.html">Цены</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="contacts.html">Контакты </a>-->
+<!--                    </li>-->
                 </ul>
             </nav>
             <address class="main-header__widget widget-contacts">
