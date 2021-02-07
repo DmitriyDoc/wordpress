@@ -3,6 +3,8 @@
 require_once(__DIR__ . '/includes/widget-text.php');
 require_once(__DIR__ . '/includes/widget-contacts.php');
 require_once(__DIR__ . '/includes/widget-mail.php');
+require_once(__DIR__ . '/includes/widget-socials.php');
+
 
 add_action('after_setup_theme', 'si_setup');
 add_action('wp_enqueue_scripts', 'si_scripts');
@@ -31,6 +33,13 @@ function si_scripts() {
     wp_enqueue_style(
         'si-style',
         _si_assets_path('css/styles.css'),
+        [],
+        '1.0',
+        'all'
+    );
+    wp_enqueue_style(
+        'si-social-widget',
+        _si_assets_path('css/social-widget.css'),
         [],
         '1.0',
         'all'
@@ -84,6 +93,7 @@ function si_widgets() {
     register_widget('si_widget_text');
     register_widget('si_widget_contacts');
     register_widget('si_widget_mail');
+    register_widget('si_widget_social');
 }
 
 function _si_assets_path($path){

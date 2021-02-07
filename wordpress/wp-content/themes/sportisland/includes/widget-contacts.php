@@ -64,4 +64,5 @@ class SI_Widget_Contacts extends WP_Widget {
     public function update($new_instance, $old_instance){
         return $new_instance;
     }
+
 }

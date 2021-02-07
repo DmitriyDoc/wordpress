@@ -45,10 +45,8 @@ class SI_Widget_Mail extends WP_Widget {
     public function widget($args, $instance){
 
  ?>
-        <p class="widget-contact-mail">
             <?php echo $instance['mail-text']; ?>
             <a href="mailto:<?php echo $instance['mail']; ?>"><?php echo $instance['mail']; ?></a>
-        </p>
 
 <?php
 

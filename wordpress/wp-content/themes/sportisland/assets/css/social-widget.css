@@ -1,0 +1,34 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
+
+.social-icons {
+    color: #FFFFFF;
+    position: relative;
+}
+
+.social-icons a {
+    text-align: center;
+    font-size: 15px;
+    padding: 8px 10px 6px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons .fa-facebook, .social-icons .facebook {
+    background: transparent;
+}
+
+.social-icons .fa-vk, .social-icons .vk {
+    background: transparent;
+}
+
+.social-icons .fa-youtube, .social-icons .youtube {
+    background: transparent;
+}
+
+.social-icons .fa-instagram, .social-icons .instagram {
+    background: transparent;
+}
