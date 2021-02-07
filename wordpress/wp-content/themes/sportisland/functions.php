@@ -5,6 +5,7 @@ require_once(__DIR__ . '/includes/widget-contacts.php');
 require_once(__DIR__ . '/includes/widget-mail.php');
 require_once(__DIR__ . '/includes/widget-socials.php');
 require_once(__DIR__ . '/includes/widget-iframe.php');
+require_once(__DIR__ . '/includes/widget-info.php');
 
 
 add_action('after_setup_theme', 'si_setup');
@@ -96,6 +97,7 @@ function si_widgets() {
     register_widget('si_widget_mail');
     register_widget('si_widget_social');
     register_widget('si_widget_iframe');
+    register_widget('si_widget_info');
 }
 
 function _si_assets_path($path){
