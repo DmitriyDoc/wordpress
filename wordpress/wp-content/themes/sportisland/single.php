@@ -18,7 +18,7 @@
                 <?php the_content(); ?>
                 <footer class="main-article__footer">
                     <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('d F Y'); ?></time>
-                    <a href="#" class="main-article__like like">    
+                    <a href="#" class="main-article__like like">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 51.997 51.997" style="enable-background:new 0 0 51.997 51.997;" xml:space="preserve">
                   <style> path{
                           fill: #666;
