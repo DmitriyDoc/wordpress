@@ -169,6 +169,40 @@ function si_register_types() {
         'supports'            => ['title'],
         'has_archive' => true
     ]);
+    register_taxonomy('shedules_days', ['shedules'], [
+        'labels'                => [
+            'name'              => 'Дни недели',
+            'singular_name'     => 'День',
+            'search_items'      => 'Найти день недели',
+            'all_items'         => 'Все дни недели',
+            'view_item '        => 'Посмотреть дни недели',
+            'edit_item'         => 'Редактировать дни недели',
+            'update_item'       => 'Обновить',
+            'add_new_item'      => 'Добавить день недели',
+            'new_item_name'     => 'Добавить день недели',
+            'menu_name'         => 'Все дни недели',
+        ],
+        'description'           => '',
+        'public'                => true,
+        'hierarchical'          => true
+    ]);
+    register_taxonomy('places', ['shedules'], [
+        'labels'                => [
+            'name'              => 'Залы',
+            'singular_name'     => 'Залы',
+            'search_items'      => 'Найти залы',
+            'all_items'         => 'Все залы',
+            'view_item '        => 'Посмотреть залы',
+            'edit_item'         => 'Редактировать залы',
+            'update_item'       => 'Обновить',
+            'add_new_item'      => 'Добавить залы',
+            'new_item_name'     => 'Добавить залы',
+            'menu_name'         => 'Все залы',
+        ],
+        'description'           => '',
+        'public'                => true,
+        'hierarchical'          => true
+    ]);
     register_post_type( 'prices', [
         'labels' => [
             'name'               => 'Прайсы', // основное название для типа записи
