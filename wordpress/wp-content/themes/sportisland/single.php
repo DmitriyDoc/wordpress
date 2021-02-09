@@ -31,7 +31,12 @@
 
                 </svg>
                         <span class="like__text">Нравится </span>
-                        <span class="like__count">46</span>
+                        <span class="like__count">
+                            <?php
+                                $likes = get_post_meta($id,'si-like', true);
+                                echo $likes ? $likes : 0;
+                            ?>
+                        </span>
                     </a>
                 </footer>
                 </article>
