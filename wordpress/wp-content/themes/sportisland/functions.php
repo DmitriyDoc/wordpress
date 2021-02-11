@@ -14,6 +14,8 @@
     add_action( 'add_meta_boxes', 'si_meta_boxes' );
     add_action( 'save_post', 'si_save_like_meta' );
     add_action( 'admin_init', 'si_register_slogan' );
+    add_action( 'admin_post_nopriv_si-modal-form', 'si_modal_form_handler' );
+    add_action( 'admin_post_si-modal-form', 'si_modal_form_handler' );
 
     add_shortcode('si-paste-link', 'si_paste_link');
 
@@ -331,6 +333,10 @@
             class="regular-text code"
         >
     <?php
+    }
+
+    function si_modal_form_handler() {
+        header('Location:'. home_url());
     }
 
     function _si_assets_path($path){
