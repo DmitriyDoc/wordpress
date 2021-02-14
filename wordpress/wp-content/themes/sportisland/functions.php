@@ -346,7 +346,7 @@
         echo '<p>' . $likes . '</p>' ;
 }
 
-    function si_order_fields_cb($post_obj, $args) {
+    function si_order_fields_cb($post_obj, $slug) {
         $slug = $slug['args'];
         $data = get_post_meta($post_obj->ID, $slug, true );
         $data = $data ? $data : 'Нет данных';
@@ -391,6 +391,31 @@
     }
 
     function si_modal_form_handler() {
+        $name = $_POST['si-user-name'] ? $_POST['si-user-name'] : 'Аноним';
+        $phone = $_POST['si-user-phone'] ? $_POST['si-user-phone'] : false;
+        $choice = $_POST['form-post-id'] ? $_POST['form-post-id'] : 'empty';
+        if ($phone) {
+            $name = wp_strip_all_tags( $name );
+            $phone = wp_strip_all_tags( $phone );
+            $choice = wp_strip_all_tags( $choice );
+            $id = wp_insert_post( wp_slash([
+                'post_title' => 'Заявка №',
+                'post_type' => 'orders',
+                'post_status' => 'publish',
+                'meta_input' => [
+                    'si_order_name' => $name,
+                    'si_order_phone' => $phone,
+                    'si_order_choice' => $choice
+                ]
+            ]));
+            if ( $id !== 0 ) {
+                wp_update_post([
+                    'ID' => $id,
+                    'post_title' => 'Заявка №' . $id
+                ]);
+                update_field('orders_status', 'new', $id);
+            }
+        }
         header('Location:'. home_url());
     }
 
