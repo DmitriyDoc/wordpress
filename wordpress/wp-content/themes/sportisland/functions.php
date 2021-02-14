@@ -20,11 +20,13 @@
     add_action( 'wp_ajax_nopriv_post-likes', 'si_likes' );
     add_action( 'wp_ajax_post-likes', 'si_likes' );
     add_action( 'manage_posts_custom_column', 'si_likes_column', 5, 2 );
+    add_action( 'manage_posts_custom_column', 'si_order_status_column', 5, 2 );
 
     add_shortcode('si-paste-link', 'si_paste_link');
 
     add_filter('show_admin_bar', '__return_false');
     add_filter('manage_posts_columns', 'si_add_col_likes');
+    add_filter('manage_posts_columns', 'si_add_col_order_status');
     add_filter('si_widget_text', 'do_shortcode');
 
     function si_setup() {
@@ -461,10 +463,38 @@
         echo $likes ? $likes : 0;
     }
 
+    function si_order_status_column($col_name, $id) {
+        if ( $col_name !== 'col_order_status' ) return;
+        $status = get_post_meta($id,'orders_status', true);
+        switch ( $status ) {
+            case 'new':
+                echo '<strong><span style="color: #00ff00;" >'. $status .'</span></strong>' ;
+                break;
+            case 'proccessing':
+                echo '<strong><span style="color: #ff9900;" >'. $status .'</span</strong>' ;
+                break;
+            case 'done':
+                echo '<strong><span style="color: #ff0000;" >'. $status .'</span> </strong>';
+                break;
+
+            default:
+                echo '<span>'. $status .'</span>' ;
+                break;
+        }
+    }
+
     function si_add_col_likes($defaults) {
         $type = get_current_screen();
         if ( $type->post_type === 'post'){
             $defaults['col_likes'] = 'Лайки';
+        }
+        return $defaults;
+    }
+
+    function si_add_col_order_status($defaults) {
+        $type = get_current_screen();
+        if ($type->post_type === 'orders') {
+            $defaults['col_order_status'] = 'Статус заказа';
         }
         return $defaults;
     }
