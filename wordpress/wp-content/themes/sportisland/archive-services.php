@@ -23,8 +23,9 @@
                         <h2 class="service__name main-heading"> <?php the_title(); ?> </h2>
                         <p class="service__text"> <?php the_field('services_description'); ?> </p>
                         <p class="service__action">
-                            <a href="#" class="service__subscribe btn">записаться</a>
-                            <strong class="service__price price"> <?php the_field('services_price'); ?> <span class="price__unit">р./мес.</span>
+                            <a href="#modal-form" data-post-id="<?php echo $id; ?>" class="service__subscribe btn btn_modal">записаться</a>
+                            <strong class="service__price price">
+                                <?php the_field('services_price'); ?> <span class="price__unit">р./мес.</span>
                             </strong>
                         </p>
                         <figure class="service__thumb">

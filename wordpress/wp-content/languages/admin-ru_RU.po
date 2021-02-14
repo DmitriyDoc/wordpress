@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.6.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-01-28 19:23:52+0000\n"
+"PO-Revision-Date: 2021-02-08 12:25:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,11 +45,11 @@ msgstr "Рекомендуется обновление PHP"
 #: wp-admin/includes/class-wp-site-health.php:729
 #: wp-admin/includes/dashboard.php:1770
 msgid "PHP is the programming language used to build and maintain WordPress. Newer versions of PHP are created with increased performance in mind, so you may see a positive effect on your site&#8217;s performance. The minimum recommended version of PHP is %s."
-msgstr "PHP - язык программирования используемый для создания WordPress. Новые версии PHP работают быстрее и более безопасны, используя актуальные версии PHP вы улучшаете производительность и безопасность сайта. Минимально рекомендуемая версия PHP - %s."
+msgstr "PHP — язык программирования, используемый для создания WordPress. Используя актуальные версии PHP, вы улучшаете производительность и безопасность своего сайта. Минимально рекомендуемая версия PHP — %s."
 
 #: wp-admin/user-edit.php:766 wp-admin/authorize-application.php:93
 msgid "Your website appears to use Basic Authentication, which is not currently compatible with Application Passwords."
-msgstr "Ваш сайт, похоже, использует базовую HTTP авторизацию, которая в настоящее время несовместима с паролями приложений."
+msgstr "Ваш сайт, похоже, использует базовую HTTP-авторизацию, которая в настоящее время несовместима с паролями приложений."
 
 #: wp-admin/about.php:260
 msgid "https://wordpress.org/plugins/enable-jquery-migrate-helper/"
@@ -1125,7 +1125,7 @@ msgstr "PHP сессии"
 #. translators: 1: session_start(), 2: session_write_close()
 #: wp-admin/includes/class-wp-site-health.php:1129
 msgid "A PHP session was created by a %1$s function call. This interferes with REST API and loopback requests. The session should be closed by %2$s before making any HTTP requests."
-msgstr "Сессия PHP была создана вызовом функции %1$s. Это препятствует работе REST API и петлевым запросам. Сессия должна быть закрыта функцией %2$s перед выполнением любых HTTP-запросов."
+msgstr "Сессия PHP была создана вызовом функции %1$s. Это препятствует работе REST API и петлевых запросов. Сессия должна быть закрыта функцией %2$s перед выполнением любых HTTP-запросов."
 
 #: wp-admin/includes/class-wp-site-health.php:1123
 msgid "An active PHP session was detected"
@@ -1134,7 +1134,7 @@ msgstr "Обнаружена активная PHP сессия"
 #. translators: 1: session_start(), 2: session_write_close()
 #: wp-admin/includes/class-wp-site-health.php:1112
 msgid "PHP sessions created by a %1$s function call may interfere with REST API and loopback requests. An active session should be closed by %2$s before making any HTTP requests."
-msgstr "Сессии PHP созданные вызовом функции %1$s могут препятствовать работе REST API и петлевым запросам. Активная сессия должна быть закрыта функцией %2$s перед выполнением любых HTTP-запросов."
+msgstr "Сессии PHP, созданные вызовом функции %1$s, могут препятствовать работе REST API и петлевых запросов. Активная сессия должна быть закрыта функцией %2$s перед выполнением любых HTTP-запросов."
 
 #: wp-admin/includes/class-wp-site-health.php:1102
 msgid "No PHP sessions detected"
@@ -2370,18 +2370,18 @@ msgstr "Перейти на экран плагинов"
 #. translators: %s: The filename of the package.
 #: wp-admin/includes/file.php:1361
 msgid "The authenticity of %s could not be verified."
-msgstr "Подлинность %s не может быть проверена."
+msgstr "Не удалось проверить подлинность %s."
 
 #. translators: %s: The filename of the package.
 #: wp-admin/includes/file.php:1313
 msgid "The authenticity of %s could not be verified as no signature was found."
-msgstr "Подлинность %s не может быть проверена, так как подпись не была найдена."
+msgstr "Не удалось проверить подлинность %s, так как подпись не была найдена."
 
 #. translators: %s: The filename of the package.
 #: wp-admin/includes/file.php:1240 wp-admin/includes/file.php:1260
 #: wp-admin/includes/file.php:1294
 msgid "The authenticity of %s could not be verified as signature verification is unavailable on this system."
-msgstr "Подлинность %s не может быть проверена, так как возможность проверки подписей недоступна в этой системе."
+msgstr "Не удалось проверить подлинность %s, так как данная система не поддерживает проверку подписей."
 
 #. translators: %s: Eraser friendly name.
 #: wp-admin/includes/ajax-actions.php:5028
