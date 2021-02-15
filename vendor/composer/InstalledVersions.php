@@ -118,6 +118,15 @@ private static $installed = array (
       ),
       'reference' => 'tags/5.3.2',
     ),
+    'wpackagist-plugin/flamingo' => 
+    array (
+      'pretty_version' => '2.2.1',
+      'version' => '2.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'tags/2.2.1',
+    ),
     'wpackagist-plugin/hc-custom-wp-admin-url' => 
     array (
       'pretty_version' => '1.4',
