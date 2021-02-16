@@ -31,12 +31,6 @@ Description: Выводит уведомление для пользовател
         }
     }
 
-    //add_action('wp_footer', function(){
-    //    $options = options();
-    //    foreach ($options as $key => $value){
-    //        echo $key . ' =>' . get_option($key) .'<br>';
-    //    }
-    //});
 
     add_action( 'admin_menu', 'cnl_register_menu');
 
@@ -113,6 +107,53 @@ Description: Выводит уведомление для пользовател
 
             <button type="submit"> Сохранить настройки  </button>
         </form>
+<?php
+    }
 
+    add_action( 'wp_footer', 'cnl_front_page_view');
+
+    function cnl_front_page_view() {
+        $bg = get_option('cnl_bg');
+        $color = get_option('cnl_color');
+        $text = get_option('cnl_text');
+        $position = get_option('cnl_position');
+        $css = $position . ': 0;';
+?>
+        <div class="alert">
+            <div class="wrapper">
+                <?php echo  $text; ?>
+                <br><br>
+                <button class="alert__btn">Принять и закрыть</button>
+            </div>
+        </div>
+        <style>
+            .alert {
+                color : <?php echo  $color; ?> ;
+                background-color: <?php echo  $bg; ?>;
+                position: fixed;
+                <?php echo  $css; ?>
+                left: 0;
+                z-index: 9999999;
+                text-align: center;
+                padding: 20px 10px;
+                width: 100%;
+            }
+            .alert button {
+                border: 1px solid <?php echo  $color; ?>;
+                color : <?php echo  $color; ?> ;
+                background-color: transparent;
+                font: inherit;
+                font-size: 14px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .alert button:hover,
+            .alert button:active,
+            .alert button:focus{
+                background-color: <?php echo  $color; ?>;
+                color: <?php echo  $bg; ?>;
+                transition: 0.3s;
+            }
+        </style>
 <?php
     }
