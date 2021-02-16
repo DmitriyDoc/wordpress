@@ -234,7 +234,8 @@
             'menu_position'       => 20, // если задано одно значение у всех типов, тогда выводятся по порядку
             'menu_icon'           => 'dashicons-money-alt',
             'hierarchical'        => false,
-            'supports'            => ['title'],
+            'show_in_rest'        => true,
+            'supports'            => ['title','editor'],
             'has_archive' => true
         ]);
         register_post_type( 'cards', [

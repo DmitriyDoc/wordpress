@@ -1,0 +1,11 @@
+
+/*Стили для таблицы. редактор gutenberg добавляет свои обвертки, которые нужно обнулить*/
+
+figure.wp-block-table {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+tr:first-child {
+    border-bottom: 1px solid #555 ;
+}
