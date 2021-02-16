@@ -86,6 +86,15 @@
       ),
       'reference' => 'tags/5.9.4',
     ),
+    'wpackagist-plugin/breadcrumb-navxt' => 
+    array (
+      'pretty_version' => '6.6.0',
+      'version' => '6.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'tags/6.6.0',
+    ),
     'wpackagist-plugin/contact-form-7' => 
     array (
       'pretty_version' => '5.3.2',

@@ -330,6 +330,27 @@
             "install-path": "../../wordpress/wp-content/plugins/advanced-custom-fields"
         },
         {
+            "name": "wpackagist-plugin/breadcrumb-navxt",
+            "version": "6.6.0",
+            "version_normalized": "6.6.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/breadcrumb-navxt/",
+                "reference": "tags/6.6.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/breadcrumb-navxt.6.6.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "homepage": "https://wordpress.org/plugins/breadcrumb-navxt/",
+            "install-path": "../../wordpress/wp-content/plugins/breadcrumb-navxt"
+        },
+        {
             "name": "wpackagist-plugin/contact-form-7",
             "version": "5.3.2",
             "version_normalized": "5.3.2.0",

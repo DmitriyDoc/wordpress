@@ -7,9 +7,7 @@
 
     <main class="main-content">
     <div class="wrapper">
-        <ul class="breadcrumbs">
-            <?php get_template_part('tmp/breadcrumbs'); ?>
-        </ul>
+        <?php get_template_part('tmp/breadcrumbs'); ?>
     </div>
     <section class="contacts">
         <?php
