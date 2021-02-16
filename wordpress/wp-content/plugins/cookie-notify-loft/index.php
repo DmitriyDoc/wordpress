@@ -105,7 +105,7 @@ Description: Выводит уведомление для пользовател
             </label>
             <br><br>
 
-            <button type="submit"> Сохранить настройки  </button>
+            <button type="submit" class="alert__btn"> Сохранить настройки  </button>
         </form>
 <?php
     }
@@ -113,6 +113,7 @@ Description: Выводит уведомление для пользовател
     add_action( 'wp_footer', 'cnl_front_page_view');
 
     function cnl_front_page_view() {
+        if ( $_COOKIE['cnl_cookie_agreement'] !== 'agreed' ) :
         $bg = get_option('cnl_bg');
         $color = get_option('cnl_color');
         $text = get_option('cnl_text');
@@ -155,5 +156,36 @@ Description: Выводит уведомление для пользовател
                 transition: 0.3s;
             }
         </style>
+
+        <script>
+            const url = "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?> ";
+            const btn = document.querySelector('.alert__btn');
+            btn.addEventListener('click' , function (e) {
+                const data = new FormData();
+                data.append('action', 'cnl_cookie_ajax');
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                xhr.send(data);
+                xhr.addEventListener('readystatechange', function () {
+                    if ( xhr.readyState !== 4 ) return;
+                    if ( xhr.status === 200 ) {
+                        btn.parentElement.parentElement.remove();
+                    }
+                })
+            })
+        </script>
 <?php
+
+        endif;
+
     }
+
+    add_action('wp_ajax_nopriv_cnl_cookie_ajax', 'cnl_ajax_handler');
+    add_action('wp_ajax_cnl_cookie_ajax', 'cnl_ajax_handler');
+
+    function cnl_ajax_handler() {
+        setcookie('cnl_cookie_agreement', 'agreed', time()+60*60*24*30, '/');
+        echo 'OK';
+        wp_die();
+    }
+?>
